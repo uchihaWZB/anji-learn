@@ -1,0 +1,58 @@
+****SQL语句执行顺序：
+    FROM, including JOINs
+    WHERE
+    GROUP BY
+    HAVING
+    WINDOW functions
+    SELECT
+    DISTINCT
+    UNION
+    ORDER BY
+    LIMIT and OFFSET
+
+CREATE
+    CREATE TABLE table_name (column_name column_type);
+
+SELECT
+    SELECT column_name,column_name
+    FROM table_name
+    [WHERE Clause]
+    [LIMIT N][ OFFSET M]
+
+WHERE
+    [WHERE condition1 [AND [OR]] condition2.....
+
+GROUP BY
+    根据一个或多个列对结果集进行分组
+
+INSERT INTO
+    INSERT INTO table_name ( field1, field2,...fieldN )
+                       VALUES
+                       ( value1, value2,...valueN );
+
+UPDATE
+    UPDATE table_name SET field1=new-value1, field2=new-value2
+    [WHERE Clause]
+
+    DELETE、DROP、TRUNCATE 区别
+        DELETE DML语句，DROP和TRUNCATEDDL语句；
+        DELETE和TRUNCATE仅删除表数据，DROP将表数据和结构一起删除；
+        执行速度：DROP > TRUNCATE > DELETE
+
+DELETE
+    DELETE FROM table_name [WHERE Clause]
+
+UNION
+    连接两个以上的 SELECT 语句的结果组合到一个结果集合中。用于将不同表中相同列中查询的数据展示出来
+
+    SELECT exp1,exp2,...,expn
+    FROM tables
+    [WHERE conditions]
+    UNION [ALL | DISTINCT]
+    SELECT exp1,exp2,...,expn
+    FROM tables
+    [WHERE conditions]
+
+    UNION       不包括重复数据
+    UNION ALL   包括
+
